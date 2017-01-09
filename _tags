@@ -1,0 +1,32 @@
+# OASIS_START
+# DO NOT EDIT (digest: 0c5059989a014c9014d8549412e8804e)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+true: annot, bin_annot
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library server
+"src/server/server.cmxs": use_server
+<src/server/*.ml{,i,y}>: package(eliom.server)
+# Executable client
+"src/client/app.byte": package(eliom.client)
+"src/client/app.byte": package(js_of_ocaml.ppx)
+"src/client/app.byte": package(lwt.ppx)
+<src/client/*.ml{,i,y}>: package(eliom.client)
+<src/client/*.ml{,i,y}>: package(js_of_ocaml.ppx)
+<src/client/*.ml{,i,y}>: package(lwt.ppx)
+# OASIS_STOP
+
+<**/*.eliom{,i}>: eliom_ppx
+<src/{server,type,}/*.ml{,i}>: thread
+"src/client/app.js": package(eliom.client)
+
