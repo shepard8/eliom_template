@@ -4,12 +4,13 @@ Version:  <fill>
 Synopsis: <fill>
 Authors: <fill>
 License:  GPL with OCaml linking exception
-AlphaFeatures: ocamlbuild_more_args, compiled_setup_ml
+AlphaFeatures: ocamlbuild_more_args, compiled_setup_ml, source_patterns
+InterfacePatterns+: ../${uncapitalize_file module}.eliomi
+ImplementationPatterns+: ../${uncapitalize_file module}.eliom
 Plugins: DevFiles (0.4)
 BuildTools: ocamlbuild
 XOCamlbuildPluginTags: package(eliom.ocamlbuild)
 OCamlVersion: >= 4.01
-PostBuildCommand: cp _build/src/client/app.js static/
 
 Library "server"
   Path: src/server
@@ -22,4 +23,5 @@ Executable "client"
   MainIs: app.ml
   BuildDepends: eliom.client, js_of_ocaml.ppx, lwt.ppx
   CompiledObject: byte
+  DataFiles: app.js ($datadir/static)
 
