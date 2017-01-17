@@ -4,7 +4,7 @@ Version:  <fill>
 Synopsis: <fill>
 Authors: <fill>
 License:  GPL with OCaml linking exception
-AlphaFeatures: ocamlbuild_more_args, compiled_setup_ml
+AlphaFeatures: ocamlbuild_more_args
 Plugins: DevFiles (0.4)
 BuildTools: ocamlbuild
 XOCamlbuildPluginTags: package(eliom.ocamlbuild)
